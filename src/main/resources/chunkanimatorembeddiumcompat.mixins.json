@@ -6,8 +6,8 @@
   "minVersion": "0.8.5",
   "plugin": "dev.sxilverr.chunkanimatorembeddiumcompat.mixin.CompatMixinPlugin",
   "client": [
-    "embeddium.RenderSectionMixin",
-    "embeddium.DefaultChunkRendererMixin"
+    "sodium.RenderSectionMixin",
+    "sodium.DefaultChunkRendererMixin"
   ],
   "injectors": {
     "defaultRequire": 1

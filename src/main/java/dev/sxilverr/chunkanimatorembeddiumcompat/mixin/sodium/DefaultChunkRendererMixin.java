@@ -1,4 +1,4 @@
-package dev.sxilverr.chunkanimatorembeddiumcompat.mixin.embeddium;
+package dev.sxilverr.chunkanimatorembeddiumcompat.mixin.sodium;
 
 import dev.sxilverr.chunkanimatorembeddiumcompat.animation.AnimatingSectionSkippingIterator;
 import dev.sxilverr.chunkanimatorembeddiumcompat.animation.SectionAnimationTracker;

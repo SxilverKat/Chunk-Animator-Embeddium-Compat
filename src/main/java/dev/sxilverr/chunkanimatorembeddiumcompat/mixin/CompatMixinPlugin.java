@@ -20,25 +20,32 @@ public class CompatMixinPlugin implements IMixinConfigPlugin {
 
     @Override
     public void onLoad(String mixinPackage) {
-        if (!isEmbeddiumLoaded()) {
+        String detected = detectCompatibleRenderer();
+        if (detected == null) {
             return;
         }
         int neutralized = neutralizeChunkAnimatorConfigs();
-        System.out.println(LOG_PREFIX + "Embeddium detected; neutralized " + neutralized + " ChunkAnimator mixin config(s).");
+        System.out.println(LOG_PREFIX + detected + " detected; neutralized " + neutralized + " ChunkAnimator mixin config(s).");
     }
 
-    private boolean isEmbeddiumLoaded() {
+    private String detectCompatibleRenderer() {
         try {
             LoadingModList list = LoadingModList.get();
-            if (list != null && list.getModFileById("embeddium") != null) {
-                return true;
+            if (list != null) {
+                if (list.getModFileById("xenon") != null) {
+                    return "Xenon";
+                }
+                if (list.getModFileById("embeddium") != null) {
+                    return "Embeddium";
+                }
             }
         } catch (Throwable ignored) {}
         try {
-            return getClass().getClassLoader().getResource("me/jellysquid/mods/sodium/client/SodiumClientMod.class") != null;
-        } catch (Throwable ignored) {
-            return false;
-        }
+            if (getClass().getClassLoader().getResource("me/jellysquid/mods/sodium/client/SodiumClientMod.class") != null) {
+                return "Embeddium/Xenon";
+            }
+        } catch (Throwable ignored) {}
+        return null;
     }
 
     private int neutralizeChunkAnimatorConfigs() {
