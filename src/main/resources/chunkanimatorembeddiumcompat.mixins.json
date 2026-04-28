@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "package": "dev.sxilverr.chunkanimatorembeddiumcompat.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "refmap": "chunkanimatorembeddiumcompat.refmap.json",
+  "minVersion": "0.8.5",
+  "plugin": "dev.sxilverr.chunkanimatorembeddiumcompat.mixin.CompatMixinPlugin",
+  "client": [
+    "embeddium.RenderSectionMixin",
+    "embeddium.DefaultChunkRendererMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

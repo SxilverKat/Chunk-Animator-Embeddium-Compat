@@ -1,0 +1,38 @@
+# eclipse
+bin
+*.launch
+.settings
+.metadata
+.classpath
+.project
+
+# idea
+out
+*.ipr
+*.iws
+*.iml
+.idea
+
+# gradle
+build
+.gradle
+
+# other
+eclipse
+run
+
+# Files from Forge MDK
+forge*changelog.txt
+
+# Dev tooling / local-only
+.claude
+.vscode
+
+# Bundled compileOnly jars (do not redistribute)
+libs
+
+# Maven publish artifacts
+mcmodsrepo
+
+# Crash reports
+crash-reports
